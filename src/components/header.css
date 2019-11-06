@@ -1,0 +1,43 @@
+.header {
+  width: 100%;
+  height: 80px;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.imageProfile {
+  width: 50px;
+  opacity: 30%;
+  margin-left: 10px;
+}
+.imageMenu {
+  width: 50px;
+  margin-right: 10px;
+}
+.closeMenu {
+  width: 28px;
+  margin-right: 20px;
+}
+.containerExpandLogin {
+  text-align: left;
+  width: 180px;
+  height: 100%;
+  top: 80px;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.8);
+}
+h4 {
+  font-weight: bold;
+  margin: 10px 20px;
+  padding: 10px 5px;
+}
+
+.containerMenu {
+  text-align: right;
+  width: 60%;
+  height: 100%;
+  top: 80px;
+  right: 0;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.8);
+}
