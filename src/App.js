@@ -1,12 +1,21 @@
-import React from 'react';
-import './App.css';
+import React, { Component } from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <h1>hola mundo</h1>
-    </div>
-  );
+// Components
+import Header from './components/Header'
+import LogoCenter from './components/LogoCenter'
+import PerfectTrip from './components/PerfectTrip'
+import ListImage from './components/ListImage'
+
+export default class App extends Component {
+
+  render() {
+    return (
+      <>
+        <Header />
+        <LogoCenter />
+        <PerfectTrip />
+        <ListImage />
+      </>
+    )
+  }
 }
-
-export default App;
