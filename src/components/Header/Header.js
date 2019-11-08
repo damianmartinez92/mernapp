@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 // IMG
-import profile from "../img/profile.png";
-import menu from "../img/menu.png";
-import closeMenu from "../img/closeMenu.png";
+import profile from "../../img/profile.png";
+import menu from "../../img/menu.png";
+import closeMenu from "../../img/closeMenu.png";
 
 // STYLE
 import "./header.css";
@@ -40,21 +41,41 @@ export default class Header extends Component {
             alt="menu"
             className="closeMenu"
             onClick={() =>
-              this.setState({ expandLogin: false, expandMenu: !expandMenu })  
+              this.setState({ expandLogin: false, expandMenu: !expandMenu })
             }
           />
         )}
-        
+
         {expandLogin && (
           <div className="containerExpandLogin">
-            <h4>Create Account</h4>
-            <h4>Log In</h4>
+            <ul>
+              <li>
+                <Link to="/createaccount" className="linkMenu">
+                  Create Account
+                </Link>
+              </li>
+              <li>
+                <Link to="/login" className="linkMenu">
+                  Log In
+                </Link>
+              </li>
+            </ul>
           </div>
         )}
         {expandMenu && (
           <div className="containerMenu">
-            <h4>Cities</h4>
-            <h4>Restaurant</h4>
+            <ul>
+              <li>
+                <Link to="/cities" className="linkMenu">
+                  Cities
+                </Link>
+              </li>
+              <li>
+                <Link to="/restaurant" className="linkMenu">
+                  Restaurant
+                </Link>
+              </li>
+            </ul>
           </div>
         )}
       </div>

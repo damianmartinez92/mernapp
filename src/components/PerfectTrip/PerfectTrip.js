@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './perfectTrip.css'
-import imgFlecha from '../img/circled-right-2.png'
+import imgFlecha from '../../img/circled-right-2.png'
 
 export default class PerfectTrip extends Component {
     render() {
