@@ -2,14 +2,15 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 const path = require('path')
+const cors = require('cors')
 
 const City = require('./backend/City')
 
 // Setting 
 const port = process.env.PORT || 5000
-const uri = "mongodb+srv://admin:passadmin@mytinerary-ipcio.mongodb.net/mytinerary?retryWrites=true&w=majority";
-
-
+// const uri = "mongodb+srv://admin:passadmin@mytinerary-ipcio.mongodb.net/mytinerary?retryWrites=true&w=majority";
+const uri = "mongodb+srv://dev:dev2019@clustertest-imp38.mongodb.net/citiesdb?retryWrites=true&w=majority";
+app.use(cors())
 // conexion con la bd mongo
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 .then(res => {
@@ -20,7 +21,7 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 // Middlewares
 
 // Routes (rutas definidas)
-app.get('/', (req, res) => res.send("fhsfhshdf"))
+// app.get('/', (req, res) => res.send("fhsfhshdf"))
 
 app.get('/cities', async (req, res) => {
    const cities = await City.find()
