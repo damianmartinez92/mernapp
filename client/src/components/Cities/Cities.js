@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import { Link } from "react-router-dom";
 import "./cities.css";
 
 export default class Cities extends Component {
@@ -12,7 +13,7 @@ export default class Cities extends Component {
   };
 
   componentDidMount() {
-    const url = "http://localhost:5000/cities";
+    const url = "http://172.16.127.16:5000/cities/";
     fetch(url)
       .then(response => response.json())
       .then(data =>
@@ -26,7 +27,7 @@ export default class Cities extends Component {
     let filterCities = this.state.listCities;
     filterCities = filterCities.filter(cities => {
       let name = cities.name.toLowerCase();
-      return name.indexOf(value) !== -1;
+      return name.startsWith(value);
     });
     this.setState({ filterCities });
   };
@@ -37,7 +38,7 @@ export default class Cities extends Component {
       <>
         <Header />
         <div className="container">
-          <h3>Filter our current cities:</h3>
+          <h3 style={{marginLeft: "10px"}}>Filter our current cities:</h3>
           <input
             type="text"
             onChange={val => this.filterList(val)}
@@ -48,14 +49,14 @@ export default class Cities extends Component {
           ) : (
             <>
               {filterCities.length === 0 ? (
-                <h2>City not found</h2>
+                <h2 style={{marginLeft: "10px"}}>City not found</h2>
               ) : (
                 <div className="containerCities">
                   {filterCities.map(city => (
-                    <div className="containerCity" key={city._id}>
+                    <Link to={`/cities/${city._id}`} className="containerCity" key={city._id} city={city._id}>
                       <img src={city.url} alt={city.name} />
                       <span>{city.name}</span>
-                    </div>
+                    </Link>
                   ))}
                 </div>
               )}

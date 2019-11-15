@@ -28,6 +28,11 @@ app.get('/cities', async (req, res) => {
    res.send(cities)
 })
 
+app.get('/cities/:id', async (req, res) => {
+    const city = await City.findById(req.params.id)
+    res.send(city)
+})
+
 
 // Static files (archivos a mostrar segun la url)
 app.use(express.static(path.join(__dirname, 'public')))

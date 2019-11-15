@@ -23,7 +23,7 @@ export default class ListImage extends Component {
 
     return (
       <div className="containerListImage">
-        <h2>Popular MYtineraries</h2>
+        <h2 style={{marginLeft: "10px"}}>Popular MYtineraries</h2>
         {carousel === 0 ? (
           <div className="listaDeImagenes">
             <img src={barcelona} alt="barcelona" />

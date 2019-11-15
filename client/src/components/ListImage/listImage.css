@@ -13,9 +13,7 @@
 .listaDeImagenes img {
   width: 45%;
   margin: 10px auto;
-  -webkit-box-shadow: 5px 5px 15px 0px rgba(102, 102, 102, 1);
-  -moz-box-shadow: 5px 5px 15px 0px rgba(102, 102, 102, 1);
-  box-shadow: 5px 5px 15px 0px rgba(102, 102, 102, 1);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 .containerButtonsCarousel {
   width: 100%;
@@ -33,4 +31,10 @@
   -webkit-box-shadow: 5px 5px 15px 0px rgba(102, 102, 102, 1);
   -moz-box-shadow: 5px 5px 15px 0px rgba(102, 102, 102, 1);
   box-shadow: 5px 5px 15px 0px rgba(102, 102, 102, 1);
+}
+
+@media (max-width: 600px) {
+  .listaDeImagenes img {
+    height: 150px;
+  } 
 }
